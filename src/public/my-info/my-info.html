@@ -1,0 +1,57 @@
+<div ng-if="!reg.foundTmpValue" class="container">
+  <h3>Not Signed Up Yet.<a ui-sref="public.signup"> Sign up Now!</a></h3>
+</div>
+
+<div ng-if="reg.foundTmpValue" class="container">
+  <div class="row">
+    <div class="col-sm-6">
+    <div>
+      <h3>First Name</h3>
+      <p>- {{reg.user.firstname}}</p>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+    <div>
+      <h3>Last Name</h3>
+      <p>- {{reg.user.lastname}}</p>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+    <div>
+      <h3>Email</h3>
+      <p>- {{reg.user.email}}</p>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+    <div>
+      <h3>Phone</h3>
+      <p>- {{reg.user.phone}}</p>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <h3>Your favourite dish:</h3>
+  </div>
+  <div class="menu-item-tile col-md-6">
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="menu-item-photo">
+          <div>{{reg.result.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{reg.basePath}}/images/{{reg.result.short_name}}.jpg" alt="{{reg.result.name}}">
+        </div>
+        <div class="menu-item-price">{{reg.result.price_small | currency}}<span> {{reg.result.small_portion_name}}</span> {{reg.result.price_large | currency}} <span>{{reg.result.large_portion_name}}</span></div>
+      </div>
+      <div class="menu-item-description col-sm-7">
+        <h3 class="menu-item-title">{{reg.result.name}}</h3>
+        <p class="menu-item-details">{{reg.result.description}}</p>
+      </div>
+    </div>
+    <hr class="visible-xs">
+  </div>
+</div>
